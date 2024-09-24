@@ -35,4 +35,22 @@ public class TestQuadratic {
         "The smaller root of x^2 - 3x is 0");
   } // testRootsNoC()
 
+  /**
+   * Quadratic expressions with only the a and b coefficients.
+   */
+  @Test
+  public void testRootsSimple() {
+    assertEquals(-5, (new Quadratic(1, 3, -10)).smallerRoot(), 0.001,
+        "The smaller root of x^2 + 3x - 10 is -5");
+  } // testRootsSimple()
+
+  /**
+   * Quadratic expressions with only the a and b coefficients.
+   */
+  @Test
+  public void testRootsFractions() {
+    assertEquals(-1.5, (new Quadratic(6, 1, -12)).smallerRoot(), 0.001,
+        "The smaller root of 6x^2 + x - 12 is -1.5");
+  } // testRootsNoC()
+
 } // class TestQuadratic
