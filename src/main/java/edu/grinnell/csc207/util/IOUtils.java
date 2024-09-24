@@ -24,13 +24,16 @@ public class IOUtils {
    * @return
    *   The integer read.
    */
-  public static int readInt(PrintWriter pw, BufferedReader br, String prompt)
-      throws Exception {
+  public static int readInt(PrintWriter pw, BufferedReader br, String prompt) {
     if (prompt != null) {
       pw.print(prompt);
       pw.flush();
     } // if there is a prompt
-    String response = br.readLine();
-    return Integer.parseInt(response);
+    try {
+      String response = br.readLine();
+      return Integer.parseInt(response);
+    } catch (Exception e) {
+      return 0;
+    }
   } // readInt
 } // class IOUtils
